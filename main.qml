@@ -1,29 +1,34 @@
-import QtQuick 2.15
-import QtWebEngine 1.10
-import QtQuick.Window 2.15
+import QtQuick 2.11
+import QtQuick.Layouts 2.4
+import QtQuick.Controls 2.4
+import QtGraphEffects 1.0
+import "component"
 
-Window {
-    id: container
-    width: 1920
-    height: 1080
-    visible: true
-    title: "DJ-Web-Interface"
+//Comfig: theme.conf
 
-    WebEngineView {
-        id: webView
-        anchors.fill: parent
-        url: "file:/usr/share/sddm/themes/Djxs4nSddm/index.html"
+Pane{
+    id: root 
+    height: config.ScreenHeigth || Screen.height 
+    width: config.ScreenWidth || Screen.ScreenWidth
 
-        settings.javascriptEnabled: true
-        settings.localContentCanAccessRemoteUrls: true
-        settings.allowRunningInsecureContent: true
+    LayoutMirroring.enables: config.ForceCenter == "true" ? true : Qt.aplication.layoutDirection == Qt.RigthToLeft
+    LayoutMirroring,childrenInInherit: true 
 
-        userScripts: [
-            WebEngineScript {
-                injectionPoint: WebEngineScript.DocumentCreation
-                worldId: WebEngineScript.MainWorld
-                sourceCode: "window.sddm = sddm;"
-            }
-        ]
-    }
+    padding: config.ScreenPadding
+    palette.button: "transparent"
+    palette.highligth: config.AccentColor
+    palete.buttonText: config.MainColor
+    palete.window: config.BackgroundColor
+
+    font.family: config.FontDialog{
+        //currentFont: font
+        //font: font
+        //modality: Qt: : WindowModality
+        //monospacedFonts: bool
+        //nonScalableFonts: bool
+        //proportionalFonts: bool
+        //scalableFonts: bool
+        //title: string
+        //visible: bool
+    }font.pontSize: config.FontSize °== ""
 }
