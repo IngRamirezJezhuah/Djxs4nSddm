@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Djxs4nSddm
+Comment= Gestor de inicio Sddm
+version=1.0
+Author=Djxs4n 
+Type=sddm-theme
+MainScript=main.qml 
