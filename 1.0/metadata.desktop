@@ -1,0 +1,7 @@
+[SddmGreeterTheme]
+Name=Djxs4nSddm
+Description=sddm-Djxs4n-Version
+Author=Djxs4n
+Type=sddm-theme
+version=1.0
+ConfigFile=Theme/
